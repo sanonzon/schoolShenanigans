@@ -16,13 +16,13 @@
 
 	<div class="ui">
 			<br>
-			Pengar kvar: <p class="moneyLeft">0</p>
+			Pengar kvar: <p class="moneyLeft"></p>
 					<p class="errorMoney"></p>
 			<br>
-			kopt phones: <p class="boughtPhones">0</p>
+			kopt phones: <p class="boughtPhones"></p>
 					<p class="errorPhones"></p>
 			<br>
-			kopt __misc: <p class="boughtMisc">0</p>
+			kopt __misc: <p class="boughtMisc"></p>
 					<p class="errorMisc"></p>
 			<br>
 			Total Kostnad: <p class="totalCostPlaceholder"> </p>
@@ -41,14 +41,31 @@
 	var rabatt = 0.00;
 	var totalCost = 0;
 
+
+	function reset() {
+		 money = 0;
+		phoneCount = 0;
+		miscCount = 0;
+		totalCost = 0;
+		document.querySelector('.moneyLeft').innerText = money;
+		document.querySelector('.boughtPhones').innerText = phoneCount;
+		document.querySelector('.boughtMisc').innerText = miscCount;
+		document.querySelector('.totalCostPlaceholder').innerText = totalCost;
+
+	}
 	document.querySelector('.setMoney').addEventListener('click',function(){
+		reset();
+
 		money = prompt("set money count");
+
 		if (money != null) {
 			if (regex.test(money)) {
 				document.querySelector('.moneyLeft').innerText = money;
 				document.querySelector('.errorMoney').innerText = "";
 				document.querySelector('.buyPhone').style.display = "inline-block";
 				document.querySelector('.buyMisc').style.display = "inline-block";
+
+
 			}
 			else {
 				document.querySelector('.errorMoney').innerText = money + " is not a proper number.";
@@ -97,7 +114,7 @@
 	});
 
 	document.querySelector('.totalt').addEventListener('click',function(){
-					document.querySelector('.totalCostPlaceholder').innerText = "" + totalCost.toFixed(2) + " kr.";
+			document.querySelector('.totalCostPlaceholder').innerText = "" + totalCost.toFixed(2) + " kr.";
 	});
 
 	</script>
