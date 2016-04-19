@@ -11,7 +11,7 @@
 	<button class="buyMisc ">Buy Misc</button>
 	<button class="totalt">Total kostnad</button>
 
-	
+
 	<div class="ui">
 		<br>
 		Pengar kvar: <p class="moneyLeft"></p>
@@ -94,7 +94,7 @@
 
 			phoneCount++;
 			document.querySelector('.boughtPhones').innerText = phoneCount + " st.";
-			document.querySelector('.moneyLeft').innerText = money;
+			document.querySelector('.moneyLeft').innerText = "" + money.toFixed(2);
 		}
 	});
 
@@ -107,7 +107,7 @@
 			money -= miscCost;
 			miscCount++;
 			document.querySelector('.boughtMisc').innerText = miscCount + " st.";
-			document.querySelector('.moneyLeft').innerText = money;
+			document.querySelector('.moneyLeft').innerText = "" + money.toFixed(2);
 		}
 	});
 
