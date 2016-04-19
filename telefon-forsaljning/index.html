@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<button class="buyPhone">Phone</button>
+	<button class="buyMisc">Misc</button>
+	<button class="setMoney">Set Monnies</button>
+	<button class="result">Show stuff</button>
+
+<br>
+	Pengar kvar: <div style="display: inline;" class="moneyLeft">0</div><br>
+	kopt phones: <div style="display: inline;"  class="boughtPhones">0</div><br>
+	kopt __misc:<div style="display: inline;" class="boughtMisc">0</div><br>
+<script>
+	var money = 0;
+	var phoneCost = 1234;
+	var phoneCount = 0;
+	var miscCost = 543;
+	var miscCount = 0;
+
+   document.querySelector('.setMoney').addEventListener('click',function(){  
+   money = prompt("set money count");
+          document.querySelector('.moneyLeft').innerText = money;
+      });
+
+
+   document.querySelector('.buyPhone').addEventListener('click',function(){        
+   		if (phoneCost > money) {
+   			alert("you're BROKE!");
+   		}
+   		else {
+   		phoneCount++;
+          money -= phoneCost;
+          document.querySelector('.boughtPhones').innerText = phoneCount + " st.";
+            document.querySelector('.moneyLeft').innerText = money;
+        }
+      });
+
+   document.querySelector('.buyMisc').addEventListener('click',function(){
+           miscCount++; 
+        money -= miscCost;
+        document.querySelector('.boughtMisc').innerText = miscCount + " st.";
+          document.querySelector('.moneyLeft').innerText = money;
+      });
+
+
+   document.querySelector('result').addEventListener('click',function() {
+   	        document.querySelector('.boughtPhones').innerText = phoneCount + " st.";
+   	        document.querySelector('.boughtMisc').innerText = miscCount + " st.";
+       });
+
+</script>
+
+
+</body>
+</html>
