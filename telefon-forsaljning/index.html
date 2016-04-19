@@ -2,32 +2,30 @@
 <html>
 <head>
 	<title></title>
-<link rel="stylesheet" media="screen" href="style.css">
+	<link rel="stylesheet" media="screen" href="style.css">
 </head>
 <body>
 
 	<button class="setMoney">Set Monnies</button>
 	<button class="buyPhone ">Buy Phone</button>
 	<button class="buyMisc ">Buy Misc</button>
+	<button class="totalt">Total kostnad</button>
 
-
-<button class="totalt">Total kostnad</button>
-
-
+	
 	<div class="ui">
-			<br>
-			Pengar kvar: <p class="moneyLeft"></p>
-					<p class="errorMoney"></p>
-			<br>
-			kopt phones: <p class="boughtPhones"></p>
-					<p class="errorPhones"></p>
-			<br>
-			kopt __misc: <p class="boughtMisc"></p>
-					<p class="errorMisc"></p>
-			<br>
-			Total Kostnad: <p class="totalCostPlaceholder"> </p>
-			<br>
-		</div>
+		<br>
+		Pengar kvar: <p class="moneyLeft"></p>
+		<p class="errorMoney"></p>
+		<br>
+		kopt phones: <p class="boughtPhones"></p>
+		<p class="errorPhones"></p>
+		<br>
+		kopt __misc: <p class="boughtMisc"></p>
+		<p class="errorMisc"></p>
+		<br>
+		Total Kostnad: <p class="totalCostPlaceholder"> </p>
+		<br>
+	</div>
 
 
 
@@ -43,7 +41,7 @@
 
 
 	function reset() {
-		 money = 0;
+		money = 0;
 		phoneCount = 0;
 		miscCount = 0;
 		totalCost = 0;
@@ -91,7 +89,7 @@
 			money = money - phoneCost*(1-rabatt);
 			totalCost += phoneCost*(1-rabatt);
 			if (rabatt <= 0.2) {
-					rabatt += 0.01;
+				rabatt += 0.01;
 			}
 
 			phoneCount++;
@@ -114,7 +112,7 @@
 	});
 
 	document.querySelector('.totalt').addEventListener('click',function(){
-			document.querySelector('.totalCostPlaceholder').innerText = "" + totalCost.toFixed(2) + " kr.";
+		document.querySelector('.totalCostPlaceholder').innerText = "" + totalCost.toFixed(2) + " kr.";
 	});
 
 	</script>
