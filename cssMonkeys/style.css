@@ -1,0 +1,192 @@
+
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+	}
+}
+
+
+@keyframes rotateBack {
+	from {
+		transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+	}
+}
+
+
+body {
+
+		background: url('http://i.imgur.com/Zm1ij2i.jpg') ;
+	/*background-size: contain;*/
+	color:black;
+	font-family: helvetica;
+}
+
+
+.intro header {
+	background-color: #aadd66;
+
+	/*display: inline-flex; */
+
+}
+.intro h2{
+	font-size: 26px;
+	text-align: right;
+
+}
+.intro h1 {
+	text-align: left;
+	font-size: 26px;
+}
+
+a {
+	font-size: 200%;
+	text-decoration: none;
+	text-align: right;
+	color: #000;
+	background-color: #FFaabb;
+}
+a:hover {
+	background-color: #FFbb00;
+	text-decoration: underline;
+
+	color: #fff;
+
+}
+a:active {
+
+}
+.summary {
+	background: url('http://i.imgur.com/LZYj8F6.jpg') no-repeat;
+	background-size: contain;
+	width: 400px;
+
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	color:#bb11ee;
+	height: 600px;
+	transform:matrix(0.866,-2.5, 1,-0.3,0,0);
+}
+.summary p {
+    background-color: #aa66ee;
+
+}
+.summary p:hover {
+    background:none;
+    color:black;
+}
+.preamble {
+
+	background-color: #990077;
+    transform: rotate(180deg);
+    margin-top:250px;
+}
+.explanation {
+	background: url('http://i.imgur.com/yMtp7Yj.jpg?1') no-repeat ;
+	background-size: contain;
+	width:30%;
+	color:white;
+	height: 600px;
+
+
+}
+.explanation:hover {
+    transform: rotate(180deg);
+		animation-name: rotateBack;
+		animation: rotating 0.1s linear infinite;
+		animation-fill-mode: both;
+
+
+}
+.participation{
+	background-color: #11aaff;
+	background: url('http://i.imgur.com/yMtp7Yj.jpg?1') no-repeat;
+	background-size: contain;
+	width:30%;
+	margin-left: 50%;
+
+
+
+	animation-name: rotateBack;
+	animation: rotateBack 0.8s linear infinite;
+	animation-fill-mode: both;
+}
+.participation:hover {
+	animation:none;
+}
+.benefits {
+	background-color: #33bb88;
+
+
+
+}
+
+.requirements {
+	background-color: #990077;
+
+	height: 732px;
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #aaffbb;
+	/*transform: rotate(90deg);*/
+    animation-name: rotateBack;
+	animation: rotating 0.1s linear infinite;
+	animation-fill-mode: both;
+
+}
+.requirements:hover {
+
+
+}
+.requirements p:hover {
+    color:white;
+    background-color:black;
+}
+
+.design-selection {
+	background: url('http://i.imgur.com/yMtp7Yj.jpg?1') fixed;
+	transform:matrix(-0.4,2, 1,-2,300,100);
+	text-align: right;
+}
+.design-selection li a{
+	font-size: 20px;
+}
+.design-selection li a:hover{
+	font-size: 30px;
+}
+.navigation {
+	text-align: right;
+	/*transform: rotate(80deg);
+	background: url('http://i.imgur.com/yMtp7Yj.jpg?1') fixed;*/
+}
+.design-archives{
+	margin-top: -20px;
+	/*background: url('http://i.imgur.com/yMtp7Yj.jpg?1') fixed;*/
+}
+.zen-resources {
+	/*background: url('../images/apa3.jpg') fixed;*/
+	background-color: #bb99ff;
+		background: url('http://i.imgur.com/Cgly4.jpg') no-repeat;
+		background-size: contain;
+		height: 400px;
+}
+.resources li {
+	text-align: right;
+	transform: rotate(50deg);
+
+}
+
+h3 {
+	text-align: left;
+}

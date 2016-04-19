@@ -1,0 +1,19 @@
+body {
+
+  /*background: url('http://i.imgur.com/Zm1ij2i.jpg') fixed no-repeat top right;*/
+background-color: #c0c0c0;
+}
+
+.ui p {
+  display:inline-block;
+}
+.buyPhone {
+  display: none;
+}
+
+.buyMisc {
+  display: none;
+}
+.buyButtons {
+  display:
+}
