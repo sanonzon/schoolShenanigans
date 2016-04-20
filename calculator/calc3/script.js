@@ -41,15 +41,36 @@ $(function() {
 		x = 0;
 		y = 0;		
 		result = 0;
-		
+		error = "";
+		$("#errorHandler").text("");
+		$("#errorX").text("");
+		$("#errorY").text("");
+
+
 	});
 
 	$("button.equals").on("click", function() {
 		var result = 0;
+		var error = "";
 		y = $("#display").text();
 		console.log(/^[0-9]*$/.test(y));
+		var test = true;
+		if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
+			error = "Första talet är dåligt. ";
+			test = false;
+		}
+		if (!(/^[0-9]*$/.test(y) || /^[0-9]*\.[0-9]*$/.test(y))) {
+			test = false;
+			if (error.length > 0) {
+				error += "& Andra talet också."	
+			}
+			else {
+				error = "Andra talet är dåligt."
+			}
+			
+		}
 
-		if ((/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x)) &&  (/^[0-9]*$/.test(y) || /^[0-9]*\.[0-9]*$/.test(y))){			
+		if (test == true) {
 			switch(operand) {
 				case '+':
 				result = +x + +y;
@@ -69,11 +90,17 @@ $(function() {
 			}
 
 
+		$("#display").text(result);	
+		}
+		else {
+			$("#errorHandler").text(error);
+			$("#errorX").text("Tal 1: " + x);
+			$("#errorY").text("Tal 2: " + y);
 
 		}
+
+
 		
-		
-		$("#display").text(result);	
 
 
 
