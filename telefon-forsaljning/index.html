@@ -25,6 +25,12 @@
 		<br>
 		Total Kostnad: <p class="totalCostPlaceholder"> </p>
 		<br>
+		Rabatt: <p class="rabattThing"> </p>
+		<br>
+		Phonecost: <p class="phoneCostThing"> </p>
+		<br>
+		MiscCost: <p class="miscCostThing"> </p>
+		<br>
 	</div>
 
 
@@ -49,6 +55,9 @@
 		document.querySelector('.boughtPhones').innerText = phoneCount;
 		document.querySelector('.boughtMisc').innerText = miscCount;
 		document.querySelector('.totalCostPlaceholder').innerText = totalCost;
+		document.querySelector('.rabattThing').innerText = "" + (rabatt * 100).toFixed(0) + "%";
+		document.querySelector('.phoneCostThing').innerText = "" + (phoneCost*(1-rabatt)).toFixed(2) + " kr";		
+		document.querySelector('.miscCostThing').innerText = "" + miscCost + " kr";
 
 	}
 	document.querySelector('.setMoney').addEventListener('click',function(){
@@ -93,8 +102,10 @@
 			}
 
 			phoneCount++;
-			document.querySelector('.boughtPhones').innerText = phoneCount + " st.";
+			document.querySelector('.boughtPhones').innerText = phoneCount + " st";
 			document.querySelector('.moneyLeft').innerText = "" + money.toFixed(2);
+			document.querySelector('.rabattThing').innerText = "" + (rabatt * 100).toFixed(0) + "%";
+			document.querySelector('.phoneCostThing').innerText = "" + (phoneCost*(1-rabatt)).toFixed(2) + "kr";
 		}
 	});
 
