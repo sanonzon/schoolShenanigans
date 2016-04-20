@@ -53,7 +53,7 @@ $(function() {
 		var result = 0;
 		var error = "";
 		y = $("#display").text();
-		console.log(/^[0-9]*$/.test(y));
+		
 		var test = true;
 		if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
 			error = "Första talet är dåligt. ";
