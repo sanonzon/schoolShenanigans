@@ -91,7 +91,7 @@
 
 
 	document.querySelector('.buyPhone').addEventListener('click',function(){
-		if (phoneCost > money) {
+		if (money - phoneCost*(1-rabatt) < 0) {
 			alert("Not enough cash.");
 		}
 		else {

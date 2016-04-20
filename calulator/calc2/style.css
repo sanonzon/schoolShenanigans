@@ -1,0 +1,19 @@
+
+#container {
+	width: 500px;
+	height: 300px;
+	background:#505050;
+	margin: 0 auto 0 auto;
+}
+
+.numberText {
+	margin: 5px auto 5px auto;
+	width: 330px;
+}
+
+button {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 500%;
+}
