@@ -42,8 +42,8 @@ $(function() {
 
 	$("button.reset").on("click", function() {
 		$("#display").text("");
-		x = 0;
-		y = 0;
+		x = null;
+		y = null;
 		result = 0;
 		error = "";
 		$("#errorHandler").text("");
@@ -53,29 +53,37 @@ $(function() {
 	});
 
 	$("button.equals").on("click", function() {
+
 		var result = 0;
 		var error = "";
 		var test = true;
 
+		if (x == null && y == null) {
+			error = "Sluta trycka på '=' direkt! Instruktioner i h1.";
+			test = false;
+		}
 		y = $("#display").text();
 		/*
 		Kollar om talen är korrekt inmatade heltal eller decimaltal.
 		Regex är amazing.
 		*/
-		if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
-			error = "Första talet är dåligt. ";
-			test = false;
-		}
-		if (!(/^[0-9]*$/.test(y) || /^[0-9]*\.[0-9]*$/.test(y))) {
-			test = false;
-			if (error.length > 0) {
-				error = "Båda talen är dåliga.";
+		if (test) {
+			if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
+				error = "Första talet är dåligt. ";
+				test = false;
 			}
-			else {
-				error = "Andra talet är dåligt.";
-			}
+			if (!(/^[0-9]*$/.test(y) || /^[0-9]*\.[0-9]*$/.test(y))) {
+				test = false;
+				if (error.length > 0) {
+					error = "Båda talen är dåliga.";
+				}
+				else {
+					error = "Andra talet är dåligt.";
+				}
 
+			}
 		}
+
 		/*
 		Proper input ? do math.
 		*/
@@ -128,8 +136,11 @@ $(function() {
 
 
 			$("#errorHandler").text(error);
-			$("#errorX").text("Tal 1: " + x);
-			$("#errorY").text("Tal 2: " + y);
+			if (x != null && y != null) {
+				$("#errorX").text("Tal 1: " + x);
+				$("#errorY").text("Tal 2: " + y);
+			}
+
 
 		}
 
