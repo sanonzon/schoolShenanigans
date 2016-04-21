@@ -1,0 +1,65 @@
+@keyframes bgSwap {
+	from {
+		background: #bada00;
+	}
+	to {
+		background: #00bcda;
+	}
+}
+body{
+  /*animation: bgSwap 0.5s linear infinite;*/
+}
+#display {
+
+  height: 40px;
+  font-size: 200%;
+  text-align: left;
+
+}
+#withEval {
+  height: 40px;
+  font-size: 200%;
+  text-align: left;
+}
+#calcBody {
+  border: 1px black solid;
+  background: #e0e0e0;
+  width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.plus {
+  background: #505050;
+  color:white;
+}
+.minus {
+  background: #505050;
+  color:white;
+}
+.divide {
+  background: #505050;
+  color:white;
+}
+.mult {
+  background: #505050;
+  color:white;
+}
+.equals {
+  background: #cfcff0
+}
+
+button {
+  width:80px;
+  height: 80px;
+  font-size: 200%;
+}
+button:hover {
+  background: #f4f23b;
+  color:black;
+}
+#errorHandler {
+  font-size: 200%;
+}
+button.reset {
+  width: 335px;
+}

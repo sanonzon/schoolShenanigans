@@ -6,36 +6,13 @@
 
 <head>
 
-	<style>
-
-		#display {
-
-			border: 1px solid black;
-
-			width: 300px;
-			height: 40px;
-			font-size: 200%;
-
-			text-align: right;
-
-		}
-		button {
-			width:80px;
-			height: 80px;
-			font-size: 200%;
-		}
-		#errorHandler {
-			font-size: 200%;
-		}
-
-	</style>
+ <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="UTF-8">
 </head>
 
 <body>
 	<h1>Siffror -> operand -> siffror -> =</h1>
-	<div id="display">0</div>
-
+	<div id="calcBody">
 	<div>
 		<button class="number">7</button>
 		<button class="number">8</button>
@@ -65,7 +42,10 @@
 		<button class="minus">-</button>
 	</div>
 
-	​<button class="reset">C</button>
+	​<button class="reset">Clear ALL</button>
+</div>
+<div id="display"></div>
+<div id="withEval"></div>
 
 <div id="errorHandler"></div>
 <div id="errorX"></div>
@@ -79,4 +59,3 @@
 </body>
 
 </html>
-
