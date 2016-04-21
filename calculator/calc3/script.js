@@ -128,8 +128,9 @@ $(function() {
 			result = result.toFixed(decimalCount);
 
 			$("#display").text(result);
-			evalString = "" + x + operand + y;
+	/*		evalString = "" + x + operand + y;
 			$("#withEval").text("With eval: " + eval(evalString));
+			*/
 		}
 
 		else {
