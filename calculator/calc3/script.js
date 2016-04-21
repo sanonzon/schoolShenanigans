@@ -1,19 +1,23 @@
 $(function() {
 	var audio = new Audio('popcorn.mp3');
 
-	var x;
-	var y;
-	var operand = "";
+	var result = null;
+	var test = true;
+	var x = null;
+	var y = null;
+	var operand = null;
+	var error = "";
+
 	$("button").on("click", function() {
 		audio.play();
 	});
 
 	$("button.number").on("click", function() {
-		$("#display").text($("#display").text()+$(this).text());
+		$("#display").text($("#display").text() + $(this).text());
 	});
 
 	$("button.dot").on("click", function() {
-		$("#display").text($("#display").text()+$(this).text());
+		$("#display").text($("#display").text() + $(this).text());
 	});
 
 	$("button.mult").on("click", function() {
@@ -42,34 +46,40 @@ $(function() {
 
 	$("button.reset").on("click", function() {
 		$("#display").text("");
-		x = null;
-		y = null;
-		result = 0;
-		error = "";
-		$("#errorHandler").text("");
+		result = null;
+		 test = true;
+		 x = null;
+		 y = null;
+		 operand = null;
+		 error = "";
+	/*	$("#errorHandler").text("");
 		$("#errorX").text("");
 		$("#errorY").text("");
 		$("#withEval").text("");
+		*/
 	});
 
 	$("button.equals").on("click", function() {
 
-		var result = 0;
-		var error = "";
-		var test = true;
-
-		if (x == null && y == null) {
-			error = "Sluta trycka på '=' direkt! Instruktioner i h1.";
+		if ($("#display").text().length > 0) {
+			y = $("#display").text();
+		}
+		console.log("x = " + x);
+		console.log("y = " + y);
+		if ((x == null || x.length == 0) || (y == null || y.length == 0)) {
+			error = "null";
 			test = false;
 		}
-		y = $("#display").text();
+
+
 		/*
 		Kollar om talen är korrekt inmatade heltal eller decimaltal.
 		Regex är amazing.
 		*/
+		console.log("pre-number check: " + test);
 		if (test) {
 			if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
-				error = "Första talet är dåligt. ";
+				error = "Första talet är dåligt.";
 				test = false;
 			}
 			if (!(/^[0-9]*$/.test(y) || /^[0-9]*\.[0-9]*$/.test(y))) {
@@ -80,7 +90,6 @@ $(function() {
 				else {
 					error = "Andra talet är dåligt.";
 				}
-
 			}
 		}
 
@@ -97,7 +106,6 @@ $(function() {
 				break;
 				case '-':
 				result = x - y;
-				console.log(result)
 				break;
 				case '*':
 				result = x * y;
@@ -128,28 +136,23 @@ $(function() {
 			result = result.toFixed(decimalCount);
 
 			$("#display").text(result);
-	/*		evalString = "" + x + operand + y;
+			/*		evalString = "" + x + operand + y;
 			$("#withEval").text("With eval: " + eval(evalString));
 			*/
 		}
 
 		else {
-
-
+			console.log("Error posted");
+			/*
 			$("#errorHandler").text(error);
 			if (x != null && y != null) {
-				$("#errorX").text("Tal 1: " + x);
-				$("#errorY").text("Tal 2: " + y);
-			}
-
-
+			$("#errorX").text("Tal 1: " + x);
+			$("#errorY").text("Tal 2: " + y);
 		}
+		*/
+		$("#display").text(error);
+	}
 
-
-
-
-
-
-	});
+});
 
 });
