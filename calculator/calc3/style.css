@@ -169,7 +169,7 @@ body{
 }
 
 #display {
-
+overflow: hidden;
   width: 450px;
   height: 40px;
   font-size: 200%;
