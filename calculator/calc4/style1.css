@@ -1,50 +1,40 @@
 @keyframes bgSwap {
   from {
-
     background: #FCF0C5;
   }
   to {
-
     background: #FD5EFF;
   }
 }
 @keyframes bgSwap1 {
   from {
-
     background: #222CE5;
   }
   to {
-
     background: #0A0C40;
   }
 }
 @keyframes bgSwap2 {
   from {
-
     background: #2B0A40;
   }
   to {
-
     background: #9A25E5;
   }
 }
 @keyframes bgSwap3 {
   from {
-
     background: #3E0440;
   }
   to {
-
     background: #DF0DE5;
   }
 }
 @keyframes bgSwap4 {
   from {
-
     background: #401A05;
   }
   to {
-
     background: #E55F13;
   }
 }
@@ -90,11 +80,9 @@
 }
 @keyframes bgSwap0 {
   from {
-
     background: #401312;
   }
   to {
-
     background: #7F2724;
   }
 }
@@ -127,7 +115,6 @@
   }
 }
 body{
-
   animation: bgSwap 3s linear infinite;
 }
 
@@ -169,7 +156,7 @@ body{
 }
 
 #display {
-overflow: hidden;
+  overflow: hidden;
   width: 450px;
   height: 40px;
   font-size: 200%;

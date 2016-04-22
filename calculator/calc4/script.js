@@ -1,4 +1,7 @@
+var audio = new Audio('popcorn.mp3');
+
 function changeTheme(v) {
+
 		switch (v) {
 			case 1:
 			$("#theme_selector").attr({
@@ -6,6 +9,8 @@ function changeTheme(v) {
 				type: "text/css",
 				href: "style1.css"
 			});
+
+			audio.play();
 			break;
 			case 2:
 			$("#theme_selector").attr({
@@ -20,6 +25,7 @@ function changeTheme(v) {
 				type: "text/css",
 				href: "style2.css"
 			});
+
 			break;
 			case 4:
 			$("#theme_selector").attr({
@@ -83,7 +89,7 @@ $(function() {
 			$("#display").text(result);
 		}
 		catch (err) {
-			$("#display").text("Det gick inte.");
+			$("#display").text("ERROR");
 		}
 	});
 });
