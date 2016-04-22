@@ -1,3 +1,43 @@
+function changeTheme(v) {
+		switch (v) {
+			case 1:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style1.css"
+			});
+			break;
+			case 2:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style3.css"
+			});
+			break;
+			case 3:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style2.css"
+			});
+			break;
+			case 4:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style4.css"
+			});
+			break;
+			default:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style.css"
+			});
+			break;
+		}
+	}
+
 $(function() {
 	var string = "";
 	var result = "";
