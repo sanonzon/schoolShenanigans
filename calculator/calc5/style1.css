@@ -1,0 +1,223 @@
+@keyframes bgSwap {
+  from {
+    background: #FCF0C5;
+  }
+  to {
+    background: #FD5EFF;
+  }
+}
+@keyframes bgSwap1 {
+  from {
+    background: #222CE5;
+  }
+  to {
+    background: #0A0C40;
+  }
+}
+@keyframes bgSwap2 {
+  from {
+    background: #2B0A40;
+  }
+  to {
+    background: #9A25E5;
+  }
+}
+@keyframes bgSwap3 {
+  from {
+    background: #3E0440;
+  }
+  to {
+    background: #DF0DE5;
+  }
+}
+@keyframes bgSwap4 {
+  from {
+    background: #401A05;
+  }
+  to {
+    background: #E55F13;
+  }
+}
+@keyframes bgSwap5 {
+  from {
+    background: #E5D933;
+  }
+  to {
+    background: #BFB52B;
+  }
+}
+@keyframes bgSwap6 {
+  from {
+    background: #7F3452;
+  }
+  to {
+    background: #E55D93;
+  }
+}
+@keyframes bgSwap7 {
+  from {
+    background: #1D4035;
+  }
+  to {
+    background: #73FFD6;
+  }
+}
+@keyframes bgSwap8 {
+  from {
+    background: #1F4013;
+  }
+  to {
+    background: #5EBF38;
+  }
+}
+@keyframes bgSwap9 {
+  from {
+    background: #7F7445;
+  }
+  to {
+    background: #E5D07B;
+  }
+}
+@keyframes bgSwap0 {
+  from {
+    background: #401312;
+  }
+  to {
+    background: #7F2724;
+  }
+}
+@keyframes bgSwapDot {
+  from {
+    background: #83BF36;
+  }
+  to {
+    background: #2C4012;
+  }
+}
+@keyframes bgSwapClearAll {
+  from {
+    background: #000AB2;
+    color: #4CCC14;
+  }
+  to {
+    background: #FF6119;
+    color: #000EFF;
+  }
+}
+@keyframes bgSwapResultat {
+  from {
+    background: #1541B2;
+    color: #FFD97B;
+  }
+  to {
+    background: #5181FF;
+    color: #B28003;
+  }
+}
+body{
+  animation: bgSwap 3s linear infinite;
+}
+
+.one {
+  animation: bgSwap1 1s linear infinite;
+}
+.two {
+  animation: bgSwap2 1.1s linear infinite;
+}
+.three {
+  animation: bgSwap3 1.2s linear infinite;
+}
+.four {
+  animation: bgSwap4 1.3s linear infinite;
+}
+.five {
+  animation: bgSwap5 1s linear infinite;
+}
+.six {
+  animation: bgSwap6 0.5s linear infinite;
+}
+.seven {
+  animation: bgSwap7 0.8s linear infinite;
+}
+.eight {
+  animation: bgSwap8 1.4s linear infinite;
+}
+.nine {
+  animation: bgSwap9 1s linear infinite;
+}
+.zero {
+  animation: bgSwap0 0.7s linear infinite;
+}
+.dot {
+  animation: bgSwapDot 1.1s linear infinite;
+}
+.clearAll {
+  animation: bgSwapClearAll 2s linear infinite;
+}
+
+#display {
+  overflow: hidden;
+  width: 450px;
+  height: 40px;
+  font-size: 200%;
+  text-align: center;
+  background: black;
+  color: #1CBA09;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3px;
+  border: 1px blue solid;
+  padding: 1px;
+}
+#withEval {
+  height: 40px;
+  font-size: 200%;
+  text-align: left;
+}
+#calcBody {
+  border: 3px black solid;
+  background: #e0e0e0;
+  width: 337px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.plus {
+  background: #505050;
+  color:white;
+}
+.minus {
+  background: #505050;
+  color:white;
+}
+.divide {
+  background: #505050;
+  color:white;
+}
+.mult {
+  background: #505050;
+  color:white;
+}
+.equals {
+  background: #cfcff0;
+  color: black;
+}
+
+button {
+  width:80px;
+  height: 80px;
+  font-size: 200%;
+  color:white;
+}
+button:hover {
+  background: #f4f23b;
+  color:black;
+}
+button.one:hover {
+  color:white;
+}
+#errorHandler {
+  font-size: 200%;
+}
+button.reset {
+  width: 335px;
+}
