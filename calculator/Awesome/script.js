@@ -39,6 +39,14 @@ function changeTheme(v) {
 			href: "style4.css"
 		});
 		break;
+		case 5:
+		$("#theme_selector").attr({
+			rel: "stylesheet",
+			type: "text/css",
+			href: "style5.css"
+		});
+		animateDiv();
+		break;
 		default:
 		$("#theme_selector").attr({
 			rel: "stylesheet",
@@ -50,6 +58,7 @@ function changeTheme(v) {
 		break;
 	}
 }
+
 
 
 $(function() {
@@ -82,14 +91,12 @@ $(function() {
 
 	$("button.plus").on("click", function() {
 			x = $("#display").text();
-		lastClickWasOpenrand = true;
 		$("#display").text("");
 		operand = $(this).text();
 	});
 
 	$("button.minus").on("click", function() {
 			x = $("#display").text();
-		lastClickWasOpenrand = true;
 		$("#display").text("");
 		operand = $(this).text();
 	});

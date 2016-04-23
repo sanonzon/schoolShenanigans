@@ -156,18 +156,15 @@ body{
 }
 
 #display {
+  animation: bgSwapClearAll 2s linear infinite;
   overflow: hidden;
-  width: 450px;
+  width: 337px;
   height: 40px;
   font-size: 200%;
-  text-align: center;
-  background: black;
-  color: #1CBA09;
+  text-align: right;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3px;
-  border: 1px blue solid;
-  padding: 1px;
 }
 #withEval {
   height: 40px;
