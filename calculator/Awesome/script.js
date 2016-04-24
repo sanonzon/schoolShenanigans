@@ -1,5 +1,5 @@
 /*
-audio.pause() på standard selection bara för sången är så vacker.
+audio.pause() på standard selection bara för låten är så vacker.
 Kan endast hantera tal -> operand -> tal -> =
 */
 
