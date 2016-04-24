@@ -1,11 +1,11 @@
 /*
 audio.pause() på standard selection bara för sången är så vacker.
 Kan endast hantera tal -> operand -> tal -> =
-
 */
 
 
-var audio = new Audio("popcorn.mp3");
+var popcorn = new Audio("popcorn.mp3");
+
 
 function changeTheme(v) {
 	switch (v) {
@@ -15,7 +15,7 @@ function changeTheme(v) {
 			type: "text/css",
 			href: "style1.css"
 		});
-		audio.play();
+		popcorn.play();
 		break;
 		case 2:
 		$("#theme_selector").attr({
@@ -45,7 +45,6 @@ function changeTheme(v) {
 			type: "text/css",
 			href: "style5.css"
 		});
-		animateDiv();
 		break;
 		default:
 		$("#theme_selector").attr({
@@ -53,8 +52,8 @@ function changeTheme(v) {
 			type: "text/css",
 			href: "style.css"
 		});
-		audio.pause();
-		audio.currentTime = 0;
+		popcorn.pause();
+		popcorn.currentTime = 0;
 		break;
 	}
 }
