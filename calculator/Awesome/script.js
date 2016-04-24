@@ -58,7 +58,24 @@ function changeTheme(v) {
 	}
 }
 
-
+function scientificNotation(number) {
+	var withoutE = /^[0-9]*/.exec(number);
+	var eCounter = /[0-9]*$/.exec(number);
+	if (/[0-9]*e\+[0-9]*/.test(number)) {
+		for (var i = 0; i < eCounter; i++) {
+			withoutE *= 10;
+		}
+	}
+	else if (/[0-9]*e\-[0-9]*/.test(number)) {
+		for (var i = 0; i < eCounter; i++) {
+			withoutE /= 10;
+		}
+	}
+	else {
+		return number;
+	}
+	return withoutE;
+}
 
 $(function() {
 	var result = null;
@@ -73,29 +90,29 @@ $(function() {
 	});
 
 	$("button.dot").on("click", function() {
-			$("#display").text($("#display").text() + $(this).text());
+		$("#display").text($("#display").text() + $(this).text());
 	});
 
 	$("button.mult").on("click", function() {
-			x = $("#display").text();
+		x = $("#display").text();
 		$("#display").text("");
 		operand = $(this).text();
 	});
 
 	$("button.divide").on("click", function() {
-			x = $("#display").text();
+		x = $("#display").text();
 		$("#display").text("");
 		operand = $(this).text();
 	});
 
 	$("button.plus").on("click", function() {
-			x = $("#display").text();
+		x = $("#display").text();
 		$("#display").text("");
 		operand = $(this).text();
 	});
 
 	$("button.minus").on("click", function() {
-			x = $("#display").text();
+		x = $("#display").text();
 		$("#display").text("");
 		operand = $(this).text();
 	});
@@ -118,6 +135,10 @@ $(function() {
 		if ($("#display").text().length > 0) {
 			y = $("#display").text();
 		}
+
+		x = scientificNotation(x);
+		y = scientificNotation(y);
+
 		console.log("x = " + x);
 		console.log("y = " + y);
 		if ((x == null || x.length == 0) || (y == null || y.length == 0)) {
@@ -132,7 +153,8 @@ $(function() {
 		*/
 		console.log("pre-number check: " + test);
 		if (test) {
-			if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
+
+		 if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
 				error = "ERROR";
 				test = false;
 			}
@@ -141,6 +163,13 @@ $(function() {
 				if (error.length == 0) {
 					error = "ERROR";
 				}
+			}
+			/*
+				Fulhack ifall talet har e notation
+			*/
+			if (/e/.test(x) || /e/.test(y)) {
+				test = true;
+				error = "";
 			}
 		}
 
