@@ -136,8 +136,7 @@ $(function() {
 			y = $("#display").text();
 		}
 
-		x = scientificNotation(x);
-		y = scientificNotation(y);
+
 
 		console.log("x = " + x);
 		console.log("y = " + y);
@@ -154,7 +153,7 @@ $(function() {
 		console.log("pre-number check: " + test);
 		if (test) {
 
-		 if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
+			if (!(/^[0-9]*$/.test(x) || /^[0-9]*\.[0-9]*$/.test(x))) {
 				error = "ERROR";
 				test = false;
 			}
@@ -165,9 +164,11 @@ $(function() {
 				}
 			}
 			/*
-				Fulhack ifall talet har e notation
+			Fulhack ifall talet har e notation
 			*/
 			if (/e/.test(x) || /e/.test(y)) {
+				x = scientificNotation(x);
+				y = scientificNotation(y);
 				test = true;
 				error = "";
 			}
