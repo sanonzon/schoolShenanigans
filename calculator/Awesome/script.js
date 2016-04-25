@@ -7,57 +7,6 @@ Kan endast hantera tal -> operand -> tal -> =
 var popcorn = new Audio("popcorn.mp3");
 
 
-function changeTheme(v) {
-	switch (v) {
-		case 1:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style1.css"
-		});
-		popcorn.play();
-		break;
-		case 2:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style3.css"
-		});
-		break;
-		case 3:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style2.css"
-		});
-
-		break;
-		case 4:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style4.css"
-		});
-		break;
-		case 5:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style5.css"
-		});
-		break;
-		default:
-		$("#theme_selector").attr({
-			rel: "stylesheet",
-			type: "text/css",
-			href: "style.css"
-		});
-		popcorn.pause();
-		popcorn.currentTime = 0;
-		break;
-	}
-}
-
 function scientificNotation(number) {
 	var withoutE = /^[0-9]*/.exec(number);
 	var eCounter = /[0-9]*$/.exec(number);
@@ -84,6 +33,59 @@ $(function() {
 	var y = null;
 	var operand = null;
 	var error = "";
+
+	$("select").on("change", function() {
+		switch (parseFloat($(this).val())) {
+			case 1:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style1.css"
+			});
+			popcorn.play();
+			break;
+			case 2:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style3.css"
+			});
+			break;
+			case 3:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style2.css"
+			});
+			break;
+			case 4:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style4.css"
+			});
+			break;
+			case 5:
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style5.css"
+			});
+			break;
+			default:
+			console.log("DEFAULT SWITCH");
+			$("#theme_selector").attr({
+				rel: "stylesheet",
+				type: "text/css",
+				href: "style.css"
+			});
+			popcorn.pause();
+			popcorn.currentTime = 0;
+			break;
+		}
+
+	});
+
 
 	$("button.number").on("click", function() {
 		$("#display").text($("#display").text() + $(this).text());
