@@ -15,9 +15,18 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
+import math
+import re
+
 def verbing(s):
   # +++your code here+++
-  return
+  if len(s) >= 3:
+    if s[-3:] == "ing":
+      return s + "ly"
+    else:
+      return s + "ing"
+  else:
+    return s
 
 
 # E. not_bad
@@ -30,9 +39,28 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
   # +++your code here+++
-  return
-
-
+  words = s.split()
+  fixed = ""
+  triggered = False
+  if s.find("not") < s.find("bad"):
+    for word in words:
+      if word == "not" and not triggered:
+        triggered = True
+      elif word[:3] == "bad" and triggered:
+        if len(word) > 3:
+          fixed += " good" + word[-1]
+        else:
+          fixed += " good"
+      else:
+        if not triggered:
+          if len(fixed) > 0:
+            fixed += " " + word
+          else:
+            fixed = word
+        
+    return fixed
+  else:
+    return s
 # F. front_back
 # Consider dividing a string into two halves.
 # If the length is even, the front and back halves are the same length.
@@ -42,7 +70,26 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
   # +++your code here+++
-  return
+  front_a = None
+  front_b = None
+  back_a = None
+  back_b = None
+  if len(a) % 2 == 0:
+    front_a = a[:int(math.floor(len(a)/2))]
+    back_a = a[int(math.floor(len(a)/2)):]
+  else:
+    front_a = a[:int(math.floor(len(a)/2))+1]
+    back_a = a[int(math.floor(len(a)/2))+1:]
+  if len(b) % 2 == 0:
+    front_b = b[:int(math.floor(len(b)/2))]
+    back_b = b[int(math.floor(len(b)/2)):]
+  else:
+    front_b = b[:int(math.floor(len(b)/2))+1]
+    back_b = b[int(math.floor(len(b)/2))+1:]
+    
+  return front_a + front_b + back_a + back_b
+  #~ front = a[:int(math.floor(len(a)/2))] + b[:int(math.floor(len(b)/2))] 
+  #~ back =  a[int(math.floor(len(a)/2)):] + b[int(math.floor(len(b)/2)):]
 
 
 # Simple provided test() function used in main() to print
