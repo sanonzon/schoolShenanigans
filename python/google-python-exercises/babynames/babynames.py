@@ -54,10 +54,10 @@ def extract_names(filename):
       
     
     elif re.match("<tr align=\"right\"><td>\d*</td><td>\w*</td><td>\w*</td>",line):
-      hit = re.search("(<td>)(\d*)(</td><td>)(\w*)(</td><td>)(\w*)",line)
-      rank = hit.group(2) 
-      mannen = hit.group(4)
-      kvinnan = hit.group(6)
+      hit = re.search("<td>(\d*)</td><td>(\w*)</td><td>(\w*)",line)
+      rank = hit.group(1) 
+      mannen = hit.group(2)
+      kvinnan = hit.group(3)
       the_dict[mannen] = rank
       the_dict[kvinnan] = rank
     
@@ -90,9 +90,9 @@ def main():
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
   tot_list = []
-  for x in range(100):
-    for arg in args:
-      tot_list += extract_names(arg)
+  
+  for arg in args:
+    tot_list += extract_names(arg)
     
   print tot_list
   print len(tot_list)

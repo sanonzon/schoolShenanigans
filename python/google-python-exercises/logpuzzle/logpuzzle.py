@@ -25,7 +25,20 @@ def read_urls(filename):
   Screens out duplicate urls and returns the urls sorted into
   increasing order."""
   # +++your code here+++
+  f = open(filename, "r")
+  the_file = f.read()
+  f.close()
   
+  the_list = []
+  matches = re.findall(r"(\d+\.\d+\.\d+\.\d+).+\"GET (.+) HTTP", the_file)
+  for match in matches:
+    if match[1] not in the_list:
+      the_list.append(match[1])
+  
+  the_list = sorted(the_list)
+  the_list.insert(0, filename)
+
+  return the_list
 
 def download_images(img_urls, dest_dir):
   """Given the urls already in the correct order, downloads
@@ -36,6 +49,7 @@ def download_images(img_urls, dest_dir):
   Creates the directory if necessary.
   """
   # +++your code here+++
+  pass
   
 
 def main():
