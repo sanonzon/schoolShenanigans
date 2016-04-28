@@ -30,7 +30,7 @@ def read_urls(filename):
   f.close()
   
   the_list = []
-  matches = re.findall(r"(\d+\.\d+\.\d+\.\d+).+\"GET (.+) HTTP", the_file)
+  matches = re.findall(r"(\d+\.\d+\.\d+\.\d+).+\"GET (.+\.\w+) HTTP", the_file)
   for match in matches:
     if match[1] not in the_list:
       the_list.append(match[1])
