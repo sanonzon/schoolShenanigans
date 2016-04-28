@@ -33,7 +33,8 @@ def read_urls(filename):
   matches = re.findall(r"GET (.+) HTTP", the_file)
   for match in matches:
     if match not in the_list:
-      the_list.append(match)
+      if match[-3:] == "png" or match[-3:] == "jpg":
+        the_list.append(match)
   the_list = sorted(the_list)
   the_list.insert(0, filename)
 
