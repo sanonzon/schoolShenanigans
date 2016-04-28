@@ -31,12 +31,14 @@ def read_urls(filename):
   
   the_list = []
   matches = re.findall(r"GET (.+\.jpg|.+\.png) HTTP", the_file)
+  url = "http://code.google.com"
   for match in matches:
-    if str(filename + match) not in the_list:
-      the_list.append(filename + match)
+    if str(match) not in the_list:
+      the_list.append(match)
   
   the_list = sorted(the_list)
-
+  the_list.insert(0,url)
+  
   return the_list
 
 def download_images(img_urls, dest_dir):
@@ -48,7 +50,65 @@ def download_images(img_urls, dest_dir):
   Creates the directory if necessary.
   """
   # +++your code here+++
-  pass
+  # OVERKILL SHIT RIGHT HERE
+  #~ makedirdirs = []
+  #~ [(re.search(r"([\w-]+/)+",f).group()[:-1] not in makedirdirs) and makedirdirs.append(re.search(r"([\w-]+/)+",f).group()[:-1]) for f in img_urls[1:]]
+  #~ print makedirdirs
+  
+  #~ for x in makedirdirs:
+    #~ os.makedirs(str(dest_dir + "/" + x))
+  ################ ENDS HERE E############
+  counter = 0
+  if not os.path.exists(dest_dir):
+    os.mkdir(dest_dir)
+  text = "<html><head></head><body>"
+  for link in img_urls[1:]:
+    urllib.urlretrieve (img_urls[0] + link, "%s/img%s.%s"%(dest_dir, counter, link[-3:]))
+    counter += 1
+    text += "<img src=\"img%s.%s\">" % (counter,link[-3:])
+  #~ for f in folders_to_create:
+    #~ makedirdirs.append(re.search(r"([\w-]+/)+",f).group() if not in makedirdirs)
+  #~ print makedirdirs
+  
+  
+  
+  
+  text += "</body></html>"
+  
+  f = open("%s/index.html"%dest_dir,"w")
+  f.write(text)
+  f.close()
+  
+  
+  
+  
+  
+  #~ base_dir = os.getcwd() + "/" + dest_dir
+  #~ print base_dir
+  #~ if not os.path.exists(base_dir):
+    #~ os.mkdir(base_dir)
+  #~ print base_dir
+  #~ for folder in folders_to_create:
+    #~ current_dir = base_dir
+    #~ dirs = folder.split("/")
+    #~ # crop filenames and staring shit
+    #~ for d in dirs[1:-1]:
+      #~ if not os.path.exists(str(current_dir + d)):
+        #~ os.mkdir(str(current_dir + d))
+        #~ current_dir += "/"+d
+        #~ print "CURRENT DIR IN LOOP: %s" %current_dir
+      #~ else:
+        #~ print "DEN FANNS"
+        #~ sys.exit()
+    #~ print dirs
+    #~ for m in match:
+      #~ if not os.path.exists(m):
+        #~ os.mkdir(m)
+      
+  
+  
+  
+  
   
 
 def main():
